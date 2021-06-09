@@ -28,7 +28,7 @@ const pool = require('../database');
     const roles = await pool.query(`select  role_name from users_roles us join usertab u 
     on u.iduser = us.iduser join role r on r.role_id = us.role_id where username = $1` , [user.rows[0].username] )
     console.log(roles.rows[0].role_name)
-   if(roles.rows[0].role_name === "Comision"){
+   if(roles.rows[0].role_name === "Estudiante"){
        next()
        return;
    }
